@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "style/_variables.scss";
+
+html,body{
+  background-color: $bright-black;
+  color: $white;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.user-info {
+  color: $bright-green;
+}
+
+.path{
+  color: $blue;
+}
+
+.input-text {
+  color: $white;
+  width: auto;
+  resize: vertical;
+}

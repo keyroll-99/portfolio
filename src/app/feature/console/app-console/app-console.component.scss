@@ -1,0 +1,24 @@
+@import "style/_variables.scss";
+.console {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  .console-header {
+    width: 100%;
+    background-color: white;
+    color: $bright-black;
+  }
+
+  .console-container {
+    min-height: 100%;
+
+    .input-text {
+      background-color: $bright-black;
+      border: 0;
+
+      &:active, &:focus, &:focus-visible {
+        outline: 0;
+      }
+    }
+  }
+}
