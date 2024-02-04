@@ -1,0 +1,12 @@
+<div class="console">
+  <div class="console-header">keyroll home page</div>
+  <div class="console-container" (click)="onConsoleClick()">
+    <div *ngFor="let historyElement of consoleHistory">
+      input:  {{historyElement.input}} <br />
+      result:  {{historyElement.result}}
+    </div>
+    <div class="console-input-line" (keydown.enter)="onEnterClick()">
+      <app-console-input (inputChange)="onInputChange($event)"/>
+    </div>
+  </div>
+</div>
