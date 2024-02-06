@@ -15,7 +15,6 @@ import {NgForOf} from "@angular/common";
   styleUrl: './app-console.component.scss'
 })
 export class AppConsoleComponent implements OnInit{
-  userInput: string = "";
   consoleHistory: ConsoleAction[] = [];
   @ViewChild(ConsoleInputComponent) input!: ElementRef<ConsoleInputComponent>;
 
@@ -23,20 +22,13 @@ export class AppConsoleComponent implements OnInit{
 
   ngOnInit(): void {
     setTimeout(() => this.focusOnConsoleInput(), 0);
+    this.consoleService.getConsoleHistory().subscribe((history) => {
+      this.consoleHistory = history;
+    })
   }
 
   onConsoleClick() {
     this.focusOnConsoleInput()
-  }
-
-  onInputChange(inputValue: string){
-    console.log(inputValue);
-    this.userInput = inputValue;
-  }
-
-  onEnterClick(){
-    this.consoleService.runCommand(this.userInput);
-    this.userInput = "";
   }
 
   private focusOnConsoleInput() {

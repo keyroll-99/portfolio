@@ -1,6 +1,7 @@
 import {Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {FormBuilder, FormControl, ReactiveFormsModule} from "@angular/forms";
+import {ConsoleService} from "../../services/console.service";
 
 @Component({
   selector: 'app-console-input',
@@ -13,16 +14,15 @@ import {FormBuilder, FormControl, ReactiveFormsModule} from "@angular/forms";
 })
 export class ConsoleInputComponent {
   userInput = new FormControl("")
-
-  @Output() inputChange = new EventEmitter<string>();
   @ViewChild("consoleInput", {read:ElementRef}) consoleInput!: ElementRef<HTMLInputElement>;
 
 
-  constructor(private  formBuilder: FormBuilder) {
+  constructor(private consoleService: ConsoleService){
   }
 
-  emitInputChange() {
-    this.inputChange.emit(this.userInput.value!);
+  onEnterClick(){
+    this.consoleService.runCommand(this.userInput.value!);
+    this.userInput.setValue("");
   }
 
 }
