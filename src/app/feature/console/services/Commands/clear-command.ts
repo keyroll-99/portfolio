@@ -9,8 +9,8 @@ export class ClearCommand implements Command {
     constructor(private consoleHistory: BehaviorSubject<ConsoleAction[]>) {
     }
 
-    Execute(executeCommand: string): string {
+    Execute(executeCommand: string): string[] {
         this.consoleHistory.next([]);
-        return "";
+        return [];
     }
 }

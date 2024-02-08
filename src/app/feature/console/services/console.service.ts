@@ -5,17 +5,24 @@ import {CommandType} from "../models/command-type";
 import {Command} from "./Commands/command";
 import {NotFoundCommand} from "./Commands/not-found-command";
 import {ClearCommand} from "./Commands/clear-command";
+import {File, InitFiles} from "./Files/file";
+import {CdCommand} from "./Commands/cd-command";
+import {MkdirCommand} from "./Commands/mkdir-command";
+import {LsCommand} from "./Commands/ls-command";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConsoleService {
   private consoleHistory: BehaviorSubject<ConsoleAction[]> = new BehaviorSubject<ConsoleAction[]>([]);
+  private files: File[] = InitFiles()
   private commands: Command[] = [
     new NotFoundCommand(),
-    new ClearCommand(this.consoleHistory)
+    new ClearCommand(this.consoleHistory),
+    new CdCommand(),
+    new MkdirCommand(),
+    new LsCommand(this.files)
   ];
-
   constructor() {
   }
 
@@ -32,7 +39,7 @@ export class ConsoleService {
     return this.consoleHistory.asObservable();
   }
 
-  private executeCommand(command: string): string {
+  private executeCommand(command: string): string[] {
     const commandType = this.getCommandType(command);
     const commandToExecute = this.commands.find(command => command.baseCommand.toLowerCase() === commandType.toLowerCase());
     if (commandToExecute === undefined) {

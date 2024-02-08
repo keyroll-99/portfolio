@@ -3,7 +3,9 @@
   <div class="console-container" (click)="onConsoleClick()">
     <div *ngFor="let historyElement of consoleHistory">
       input:  {{historyElement.input}} <br />
-      result:  {{historyElement.result}}
+      <div *ngFor="let resultLine of historyElement.result">
+        {{resultLine}}
+      </div>
     </div>
       <app-console-input/>
   </div>
