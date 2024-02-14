@@ -3,22 +3,21 @@
   height: 95%;
   display: flex;
   flex-direction: column;
-  border-left: $white 10px solid;
-  border-right: $white 10px solid;
-  border-bottom: $white 10px solid;
   border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .console-header {
     width: 100%;
     background-color: $white;
     color: $bright-black;
+    position: sticky;
   }
 
   .console-container {
     min-height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }

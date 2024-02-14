@@ -20,14 +20,17 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class AppConsoleComponent implements OnInit{
   consoleHistory: ConsoleAction[] = [];
   @ViewChild(ConsoleInputComponent) input!: ElementRef<ConsoleInputComponent>;
+  lasQueryFromParam: string = '';
+  shouldOpenInitFile: boolean = true;
 
   constructor(private consoleService: ConsoleService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe((param: any) => {
       this.route.queryParams.subscribe(params => {
-
-        if (params['query']) {
+        const query = params['query'];
+        if (query && query !== this.lasQueryFromParam){
           this.consoleService.runCommand(params['query']);
         }
+        this.lasQueryFromParam = query;
       });
 
     })
@@ -39,6 +42,11 @@ export class AppConsoleComponent implements OnInit{
     this.consoleService.getConsoleHistory().subscribe((history) => {
       this.consoleHistory = history;
     })
+
+    if (this.shouldOpenInitFile) {
+      this.consoleService.runCommand("cat init.txt");
+      this.shouldOpenInitFile = false;
+    }
   }
 
   onConsoleClick() {

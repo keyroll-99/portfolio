@@ -1,9 +1,9 @@
-<div class="console">
-  <div class="console-header">keyroll home page</div>
+<fieldset class="console">
+  <legend>keyroll&commat;keyroll</legend>
   <div *ngFor="let historyElement of consoleHistory">
     <app-command-result [command]="historyElement.input" [commandResults]="historyElement.result" />
   </div>
   <div class="console-container" (click)="onConsoleClick()">
       <app-console-input/>
   </div>
-</div>
+</fieldset>

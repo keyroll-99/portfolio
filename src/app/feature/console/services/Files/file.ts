@@ -1,5 +1,6 @@
 import aboutMeFileContent from "./abouteMeFileContent";
 import contactFileContent from "./contactFileContent";
+import initFileContent from "./initFileContent";
 
 export class File {
   private name: string;
@@ -34,5 +35,6 @@ export const InitFiles = (): File[] => {
   return [
     new File("aboutMe.txt", aboutMeFileContent),
     new File("contact.txt", contactFileContent),
+    new File("init.txt", initFileContent)
   ]
 }
