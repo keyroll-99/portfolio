@@ -10,6 +10,7 @@ import {CdCommand} from "./Commands/cd-command";
 import {MkdirCommand} from "./Commands/mkdir-command";
 import {LsCommand} from "./Commands/ls-command";
 import {CatCommand} from "./Commands/cat-command";
+import {HelpCommand} from "./Commands/help-command";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class ConsoleService {
     new CdCommand(),
     new MkdirCommand(),
     new LsCommand(this.files),
-    new CatCommand(this.files)
+    new CatCommand(this.files),
+    new HelpCommand()
   ];
   constructor() {
   }

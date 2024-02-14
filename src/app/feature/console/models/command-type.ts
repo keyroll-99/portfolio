@@ -5,4 +5,5 @@ export enum CommandType {
   Cd = "cd",
   Ls = "ls",
   Cat = "cat",
+  Help = "help",
 }
