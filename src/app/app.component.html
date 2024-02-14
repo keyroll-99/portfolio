@@ -1,9 +1,7 @@
 <div class="content">
   <nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-    <a routerLink="/villains" routerLinkActive="active">Villains</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/" routerLinkActive="active">Dashboard</a>
+    <a [routerLink]="['/']" [queryParams]="{query: 'cat about.txt'}">About</a>
   </nav>
   <main>
     <router-outlet></router-outlet>

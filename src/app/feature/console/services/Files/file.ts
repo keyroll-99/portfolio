@@ -1,11 +1,14 @@
+import aboutMeFileContent from "./abouteMeFileContent";
+import contactFileContent from "./contactFileContent";
+
 export class File {
   private name: string;
-  private content: string
+  private content: string[]
   private privileges: string = "-rwxrwxr--";
   private author: string = "keyroll";
   private group: string = "keyroll";
 
-  constructor(name: string, content: string, privileges: string | null = null) {
+  constructor(name: string, content: string[], privileges: string | null = null) {
     this.name = name;
     this.content = content;
     if (privileges) {
@@ -29,8 +32,7 @@ export class File {
 
 export const InitFiles = (): File[] => {
   return [
-    new File("aboutMe.txt", "This is file 1"),
-    new File("contact.txt", "This is file 1"),
-
+    new File("aboutMe.txt", aboutMeFileContent),
+    new File("contact.txt", contactFileContent),
   ]
 }

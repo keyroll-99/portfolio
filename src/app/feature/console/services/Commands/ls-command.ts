@@ -10,7 +10,6 @@ export class LsCommand implements Command {
       this.files = files;
     }
 
-
     Execute(executeCommand: string): string[] {
         return this.files.map(file => file.getMetrics());
     }

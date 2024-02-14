@@ -1,12 +1,9 @@
 <div class="console">
   <div class="console-header">keyroll home page</div>
+  <div *ngFor="let historyElement of consoleHistory">
+    <app-command-result [command]="historyElement.input" [commandResults]="historyElement.result" />
+  </div>
   <div class="console-container" (click)="onConsoleClick()">
-    <div *ngFor="let historyElement of consoleHistory">
-      input:  {{historyElement.input}} <br />
-      <div *ngFor="let resultLine of historyElement.result">
-        {{resultLine}}
-      </div>
-    </div>
       <app-console-input/>
   </div>
 </div>

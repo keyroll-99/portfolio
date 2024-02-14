@@ -3,13 +3,15 @@ import {ConsoleInputComponent} from "../../components/console-input/console-inpu
 import {ConsoleService} from "../../services/console.service";
 import {ConsoleAction} from "../../models/console-action";
 import {NgForOf} from "@angular/common";
+import {CommandResultComponent} from "../../components/command-result/command-result.component";
 
 @Component({
   selector: 'app-app-console',
   standalone: true,
   imports: [
     ConsoleInputComponent,
-    NgForOf
+    NgForOf,
+    CommandResultComponent
   ],
   templateUrl: './app-console.component.html',
   styleUrl: './app-console.component.scss'

@@ -9,6 +9,7 @@ import {File, InitFiles} from "./Files/file";
 import {CdCommand} from "./Commands/cd-command";
 import {MkdirCommand} from "./Commands/mkdir-command";
 import {LsCommand} from "./Commands/ls-command";
+import {CatCommand} from "./Commands/cat-command";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class ConsoleService {
     new ClearCommand(this.consoleHistory),
     new CdCommand(),
     new MkdirCommand(),
-    new LsCommand(this.files)
+    new LsCommand(this.files),
+    new CatCommand(this.files)
   ];
   constructor() {
   }

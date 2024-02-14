@@ -4,4 +4,5 @@ export enum CommandType {
   Mkdir = "mkdir",
   Cd = "cd",
   Ls = "ls",
+  Cat = "cat",
 }

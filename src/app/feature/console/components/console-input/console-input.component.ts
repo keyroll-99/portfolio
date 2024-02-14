@@ -2,12 +2,14 @@ import {Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleCha
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {FormBuilder, FormControl, ReactiveFormsModule} from "@angular/forms";
 import {ConsoleService} from "../../services/console.service";
+import {ConsolePromtComponent} from "../console-promt/console-promt.component";
 
 @Component({
   selector: 'app-console-input',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ConsolePromtComponent
   ],
   templateUrl: './console-input.component.html',
   styleUrl: './console-input.component.scss'
