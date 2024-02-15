@@ -1,11 +1,13 @@
-import aboutMeFileContent from "./abouteMeFileContent";
-import contactFileContent from "./contactFileContent";
-import initFileContent from "./initFileContent";
+import aboutMeFileContent from "./fileContent/abouteMeFileContent";
+import contactFileContent from "./fileContent/contactFileContent";
+import initFileContent from "./fileContent/initFileContent";
+import projectsFileContent from "./fileContent/projectsFileContent";
+
 
 export class File {
-  private name: string;
-  private content: string[]
-  private privileges: string = "-rwxrwxr--";
+  private readonly name: string;
+  private readonly content: string[]
+  private readonly privileges: string = "-rwxrwxr--";
   private author: string = "keyroll";
   private group: string = "keyroll";
 
@@ -35,6 +37,7 @@ export const InitFiles = (): File[] => {
   return [
     new File("aboutMe.txt", aboutMeFileContent),
     new File("contact.txt", contactFileContent),
-    new File("init.txt", initFileContent)
+    new File("init.txt", initFileContent),
+    new File("projects.txt",  projectsFileContent)
   ]
 }

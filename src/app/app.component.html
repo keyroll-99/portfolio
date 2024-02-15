@@ -1,8 +1,13 @@
 <div class="content">
   <nav>
-    <a class="nav-link" [routerLink]="['/']">Dashboard</a>
-    <a class="nav-link" [routerLink]="['/']" [queryParams]="{query: 'cat aboutMe.txt'}">About</a>
-    <a class="nav-link" [routerLink]="['/']" [queryParams]="{query: 'cat contact.txt'}">Contact</a>
+    <div class="user-img">
+      <img ngSrc="assets/dog2.jpg" alt="logo with doggy" height="2048" width="2048">
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" [routerLink]="['/']" [queryParams]="{query: 'cat aboutMe.txt'}">About</a>
+      <a class="nav-link" [routerLink]="['/']" [queryParams]="{query: 'cat contact.txt'}">Contact</a>
+      <a class="nav-link" [routerLink]="['/']" [queryParams]="{query: 'cat projects.txt'}">Projects</a>
+    </div>
   </nav>
   <main>
     <router-outlet></router-outlet>

@@ -5,22 +5,46 @@ nav {
   gap: 20px;
   font-size: 1.5rem;
   padding: 5px 20px;
+  align-items: center;
+  justify-content: space-evenly;
 
-  .nav-link {
-    color: $bright-green;
-    text-decoration: none;
+  .user-img{
+    margin-top: 10px;
+
+    @media only screen and (max-height: 668px) {
+      margin-top: 0;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    .nav-link {
+      color: $bright-green;
+      text-decoration: none;
+    }
   }
 
   .nav-link:hover {
     text-decoration: underline;
   }
-}
-.content{
-  height: 100%;
-  nav{
-    height: 5%;
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
   }
-  main{
-    height: 95%;
+}
+
+.content {
+  height: 100%;
+
+  nav {
+    height: 10%;
+  }
+
+  main {
+    height: 90%;
   }
 }
