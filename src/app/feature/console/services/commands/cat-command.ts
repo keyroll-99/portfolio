@@ -1,6 +1,6 @@
 import {CommandType} from "../../models/command-type";
 import {Command} from "./command";
-import {File} from "../Files/file";
+import {File} from "../files/file";
 
 export class CatCommand implements Command {
     baseCommand: CommandType = CommandType.Cat;
