@@ -2,15 +2,15 @@ import {Injectable} from '@angular/core';
 import {ConsoleAction} from "../models/console-action";
 import {BehaviorSubject} from "rxjs";
 import {CommandType} from "../models/command-type";
-import {Command} from "./Commands/command";
-import {NotFoundCommand} from "./Commands/not-found-command";
-import {ClearCommand} from "./Commands/clear-command";
-import {File, InitFiles} from "./Files/file";
-import {CdCommand} from "./Commands/cd-command";
-import {MkdirCommand} from "./Commands/mkdir-command";
-import {LsCommand} from "./Commands/ls-command";
-import {CatCommand} from "./Commands/cat-command";
-import {HelpCommand} from "./Commands/help-command";
+import {Command} from "./commands/command";
+import {NotFoundCommand} from "./commands/not-found-command";
+import {ClearCommand} from "./commands/clear-command";
+import {File, InitFiles} from "./files/file";
+import {CdCommand} from "./commands/cd-command";
+import {MkdirCommand} from "./commands/mkdir-command";
+import {LsCommand} from "./commands/ls-command";
+import {CatCommand} from "./commands/cat-command";
+import {HelpCommand} from "./commands/help-command";
 
 @Injectable({
   providedIn: 'root'
